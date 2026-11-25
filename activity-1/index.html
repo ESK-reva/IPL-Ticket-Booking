@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>IPL 2026 Ticket Booking</title>
-
-    
+    <title>IPL 2026 Ticket Booking</title> 
+    <!--link rel="stylesheet" href="style.css"-->  
+    <link rel="stylesheet" href="../activity%202/style.css">
 </head>
 
 <body>
@@ -18,10 +18,11 @@
         <h1>IPL 2026 Ticket Booking</h1>
 
         <nav>
-            <a href="#matches">Matches</a>
-            <a href="#booking">Book Ticket</a>
-            <a href="#mybookings">My Bookings</a>
-            <a href="#guidelines">Guidelines</a>
+            <button><a href="#matches" >Matches</a></button>
+            
+            <button><a href="#mybookings">My Bookings</a></button>
+            <button><a href="#guidelines">Guidelines</a></button>
+        
         </nav>
     </header>
 
@@ -34,11 +35,11 @@
 
             <p>Book your tickets and enjoy exciting cricket action.</p>
 
-            <button><a href="#matches">View Schedule</a></button>
-            <button><a href="#booking">Book Ticket</a></button>
-
+            <a href="#matches" class="hero-button">View Schedule</a>
+            <a href="../activity-3/booking.html" class="hero-button">Book Ticket</a>
+                <!--class="hero-button"
+                class ="hero-button"-->
         </section>
-
         <!-- 3. About IPL 2026 -->
         <section id="about">
 
@@ -67,16 +68,16 @@
                 <li>Eden Gardens, Kolkata</li>
             </ul>
 
+        
         </section>
-
         <!-- 4. Match Schedule and Team Filter -->
         <section id="matches">
 
             <h2>Match Schedule</h2>
 
-            <label for="teamFilter">Filter by Team:</label>
+            <label >Filter by Team:</label>
 
-            <select id="teamFilter">
+            <select>
                 <option value="all">All Teams</option>
                 <option value="CSK">CSK</option>
                 <option value="RCB">RCB</option>
@@ -84,9 +85,9 @@
                 <option value="KKR">KKR</option>
             </select>
 
-            <div class="table-container">
+            
 
-                <table id="matchTable">
+                <table>
 
                     <thead>
                         <tr>
@@ -103,7 +104,7 @@
 
                     <tbody>
 
-                        <tr data-teams="CSK RCB">
+                        <tr>
                             <td>1</td>
                             <td>CSK vs RCB</td>
                             <td>10 May, 7:30 PM</td>
@@ -112,12 +113,12 @@
                             <td>2000</td>
                             <td>5000</td>
                             <td>
-                                <button type="button"
-                                    onclick="bookMatch(1)">Book</button>
+                                
+                                    <button>Book</button>
                             </td>
                         </tr>
 
-                        <tr data-teams="MI KKR">
+                        <tr>
                             <td>2</td>
                             <td>MI vs KKR</td>
                             <td>12 May, 7:30 PM</td>
@@ -126,12 +127,11 @@
                             <td>2500</td>
                             <td>6000</td>
                             <td>
-                                <button type="button"
-                                    onclick="bookMatch(2)">Book</button>
+                                <button>Book</button>
                             </td>
                         </tr>
 
-                        <tr data-teams="RCB MI">
+                        <tr>
                             <td>3</td>
                             <td>RCB vs MI</td>
                             <td>14 May, 7:30 PM</td>
@@ -140,8 +140,7 @@
                             <td>2200</td>
                             <td>5500</td>
                             <td>
-                                <button type="button"
-                                    onclick="bookMatch(3)">Book</button>
+                                <button>Book</button>
                             </td>
                         </tr>
 
@@ -154,8 +153,7 @@
                             <td>2000</td>
                             <td>5000</td>
                             <td>
-                                <button type="button"
-                                    onclick="bookMatch(4)">Book</button>
+                                <button>Book</button>
                             </td>
                         </tr>
 
@@ -163,7 +161,7 @@
 
                 </table>
 
-            </div>
+            
 
             <p class="note">
                 Note: Match details and prices are illustrative examples
@@ -176,37 +174,37 @@
         <section id="booking">
 
             <h2>Book Your Ticket</h2>
-
             <div class="booking-container">
+            
 
                 <!-- Booking Form -->
                 <form id="bookingForm">
 
                     <h3>Ticket Booking Form</h3>
 
-                    <label for="match">Select Match:</label>
+                    <label >Select Match:</label>
 
-                    <select id="match" required>
+                    <select >
                         <option value="1">CSK vs RCB</option>
                         <option value="2">MI vs KKR</option>
                         <option value="3">RCB vs MI</option>
                         <option value="4">CSK vs KKR</option>
                     </select>
 
-                    <label for="category">Stand Category:</label>
+                    <label >Stand Category:</label>
 
-                    <select id="category" required>
+                    <select >
                         <option value="General">General</option>
                         <option value="Premium">Premium</option>
                         <option value="VIP">VIP</option>
                     </select>
 
-                    <label for="quantity">Number of Tickets:</label>
+                    <label >Number of Tickets:</label>
 
                     <input type="number" id="quantity"
                         min="1" max="10" value="1" required>
 
-                    <label for="name">Full Name:</label>
+                    <label >Full Name:</label>
 
                     <input type="text" id="name"
                         placeholder="Enter your name" required>
@@ -216,10 +214,10 @@
                     <input type="email" id="email"
                         placeholder="Enter your email" required>
 
-                    <label for="phone">Phone Number:</label>
+                    <label >Phone Number:</label>
 
                     <input type="tel" id="phone"
-                        placeholder="10-digit phone number"
+                        placeholder="Enter number"
                         pattern="[0-9]{10}"
                         maxlength="10" required>
 
@@ -233,48 +231,47 @@
                     <h3>Booking Summary</h3>
 
                     <p>
-                        Match:
-                        <span id="summaryMatch">CSK vs RCB</span>
+                        Match: CSK vs RCB
+                        
                     </p>
 
                     <p>
-                        Venue:
-                        <span id="summaryVenue">Chennai</span>
+                        Venue: Chennai
+                        <!--span id="summaryVenue">Chennai</span-->
                     </p>
 
                     <p>
-                        Stand:
-                        <span id="summaryCategory">General</span>
+                        Stand: General
+                        <!--span id="summaryCategory">General</span-->
                     </p>
 
                     <p>
-                        Ticket Price:
-                        ₹<span id="summaryPrice">800</span>
+                        Ticket Price: ₹800
+                        <!--span id="summaryPrice">800</span-->
                     </p>
 
                     <p>
-                        Quantity:
-                        <span id="summaryQuantity">1</span>
+                        Quantity: 1
+                        <!--span id="summaryQuantity">1</span-->
                     </p>
 
                     <h3>
-                        Total Amount: ₹<span id="total">800</span>
+                        Total Amount: ₹800<!--span id="total">800</span-->
                     </h3>
 
-                    <p id="bookingMessage" aria-live="polite"></p>
+                </aside>  <!--p id="bookingMessage" aria-live="polite"></p-->
+            </div>                
 
-                </aside>
-
-            </div>
+            
 
         </section>
 
         <!-- 6. My Ticket Bookings -->
-        <section id="mybookings">
+        <section id="#mybookings">
 
             <h2>My Ticket Bookings</h2>
 
-            <div class="table-container">
+            <!--div class="table-container"-->
 
                 <table>
 
@@ -289,48 +286,48 @@
                         </tr>
                     </thead>
 
-                    <tbody id="bookingRecords">
-                        <!-- Booking records will appear here -->
-                    </tbody>
+                    <!--tbody id="bookingRecords">
+                        < Booking records will appear here >
+                    </tbody-->
 
                 </table>
 
-            </div>
+            <!--/div-->
 
             <p id="emptyMessage">No bookings yet.</p>
 
         </section>
 
         <!-- 7. Guidelines with Three Information Cards -->
-        <section id="guidelines">
+        <section id="#guidelines">
 
             <h2>Ticket Booking Guidelines</h2>
 
             <div class="cards">
 
-                <article class="card">
+                <div class="card">
                     <h3>Ticket Verification</h3>
                     <p>
                         Carry your valid ticket or booking confirmation
                         and follow stadium entry procedures.
                     </p>
-                </article>
+                </div>
 
-                <article class="card">
+                <div class="card">
                     <h3>ID Proof Requirement</h3>
                     <p>
                         Carry valid government-issued photo ID if
                         required by the stadium or ticket provider.
                     </p>
-                </article>
+                </div>
 
-                <article class="card">
+                <div class="card">
                     <h3>Prohibited Items</h3>
                     <p>
                         Do not carry weapons, dangerous objects or
                         other prohibited items into the stadium.
                     </p>
-                </article>
+                </div>
 
             </div>
 
@@ -340,7 +337,7 @@
 
     <!-- 8. Footer -->
     <footer>
-        <p> 2026 IPL Ticket Booking. All rights reserved.</p>
+        <p>&copy; 2026 IPL Ticket Booking. All rights reserved.</p>
     </footer>
 
     

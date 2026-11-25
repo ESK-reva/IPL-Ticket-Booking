@@ -1,0 +1,327 @@
+
+/* =================================
+   1. CSS VARIABLES
+================================= */
+
+:root {
+    --primary: #9e1717;
+    --accent: #ffcc00;
+    --background: #f5f5f5;
+    --text: #292929;
+    --white: #ffffff;
+    --dark: #650d0d;
+}
+
+/* =================================
+   2. BASIC STYLING
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =================================
+   3. HEADER
+================================= */
+
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 70px 15px 15px;
+}
+
+header h1 {
+    margin: 10px;
+    font-size: 28px;
+}
+
+/* =================================
+   4. NAVIGATION BAR
+================================= */
+
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 75px 15px 15px;
+}
+
+nav {
+    background-color: var(--dark);
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* =================================
+   5. HERO / BANNER SECTION
+================================= */
+
+.hero {
+    background: linear-gradient(120deg, #650d0d, #c62828);
+    color: var(--white);
+    text-align: center;
+    padding: 65px 20px;
+    margin: 0;
+    border-radius: 0;
+}
+
+.hero h2 {
+    color: var(--white);
+    font-size: 36px;
+    border: none;
+    padding: 0;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+
+/* Hero Buttons */
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: var(--dark);
+    padding: 13px 25px;
+    margin: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+/* =================================
+   6. GENERAL SECTIONS
+================================= */
+
+section {
+    background-color: var(--white);
+    padding: 25px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #cccccc;
+}
+
+h2 {
+    color: var(--primary);
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: var(--primary);
+}
+
+/* =================================
+   7. MATCH SCHEDULE TABLE
+================================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: var(--white);
+}
+
+th, td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 12px;
+}
+
+tr:nth-child(even) {
+    background-color: #edf5ed;
+}
+
+/* Table Buttons */
+
+table button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table button:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* =================================
+   8. BOOKING FORM
+================================= */
+
+.booking-container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.booking-container form,
+.summary {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    background-color: #f8f9fc;
+    box-shadow: 0 2px 5px #dddddd;
+}
+
+/* Form Labels */
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Summary Card */
+
+.summary {
+    background-color: #e8edfa;
+}
+
+/* =================================
+   9. GENERAL BUTTONS
+================================= */
+
+button {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--accent);
+    color: var(--primary);
+}
+
+/* =================================
+   10. GUIDELINE CARDS
+================================= */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eeeeee;
+    border-top: 4px solid var(--accent);
+    box-shadow: 0 3px 8px #dddddd;
+}
+
+.card h3 {
+    color: var(--primary);
+}
+
+footer {
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    border-top: 4px solid var(--accent);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =================================
+   12. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 700px) {
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+    }
+
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-container form,
+    .summary {
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}
