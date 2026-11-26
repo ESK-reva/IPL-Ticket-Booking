@@ -15,21 +15,80 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
-    // Select all Book buttons
+    // Activity 5: Book button smooth scrolling
     let bookButtons = document.querySelectorAll(".book-btn");
 
     bookButtons.forEach(function (button) {
-
         button.addEventListener("click", function () {
 
-            // Scroll to booking section
             document.getElementById("booking").scrollIntoView({
                 behavior: "smooth"
             });
 
             showToast("Please fill in your booking details!");
         });
-
     });
+
+
+    // Activity 7: Select booking form elements
+    let matchSelect = document.querySelector("#match");
+    let categorySelect = document.getElementById("category");
+    let quantityInput = document.getElementById("quantity");
+
+    // Select summary elements
+    let summaryMatch = document.getElementById("summaryMatch");
+    let summaryVenue = document.getElementById("summaryVenue");
+    let summaryCategory = document.getElementById("summaryCategory");
+    let summaryPrice = document.getElementById("summaryPrice");
+    let summaryQuantity = document.getElementById("summaryQuantity");
+    let total = document.getElementById("total");
+
+
+    // Match details and ticket prices
+    let matches = {
+        "1": { name: "CSK vs RCB", venue: "Chennai" },
+        "2": { name: "MI vs KKR", venue: "Mumbai" },
+        "3": { name: "RCB vs MI", venue: "Bengaluru" },
+        "4": { name: "CSK vs KKR", venue: "Chennai" }
+    };
+
+    let prices = {
+        "General": 800,
+        "Premium": 2000,
+        "VIP": 5000
+    };
+
+
+    // Function to update booking summary
+    function updateSummary() {
+
+        let selectedMatch = matchSelect.value;
+        let selectedCategory = categorySelect.value;
+        let quantity = Number(quantityInput.value);
+
+        if (quantity < 1 || quantity > 10 || !Number.isInteger(quantity)) {
+            return;
+        }
+
+        let matchDetails = matches[selectedMatch];
+        let price = prices[selectedCategory];
+
+        let totalAmount = price * quantity;
+
+        summaryMatch.innerText = matchDetails.name;
+        summaryVenue.innerText = matchDetails.venue;
+        summaryCategory.innerText = selectedCategory;
+        summaryPrice.innerText = price;
+        summaryQuantity.innerText = quantity;
+        total.innerText = totalAmount;
+
+        showToast("Booking summary updated!");
+    }
+
+
+    // Add change event listeners
+    matchSelect.addEventListener("change", updateSummary);
+    categorySelect.addEventListener("change", updateSummary);
+    quantityInput.addEventListener("change", updateSummary);
 
 });
