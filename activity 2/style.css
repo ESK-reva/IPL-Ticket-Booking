@@ -325,3 +325,15 @@ footer p {
         font-size: 13px;
     }
 }
+
+/* Toast Notification */
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #9e1717;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    z-index: 2000;
+}
