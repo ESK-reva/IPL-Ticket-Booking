@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toast notification function
     function showToast(message) {
         let toast = document.createElement("div");
-
         toast.innerText = message;
         toast.className = "toast";
 
@@ -15,12 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     }
 
-    // Activity 5: Book button smooth scrolling
+    // Activity 5: Smooth scrolling
     let bookButtons = document.querySelectorAll(".book-btn");
 
     bookButtons.forEach(function (button) {
         button.addEventListener("click", function () {
-
             document.getElementById("booking").scrollIntoView({
                 behavior: "smooth"
             });
@@ -29,13 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-
-    // Activity 7: Select booking form elements
-    let matchSelect = document.querySelector("#match");
+    // Activity 7: Get form elements
+    let matchSelect = document.getElementById("match");
     let categorySelect = document.getElementById("category");
     let quantityInput = document.getElementById("quantity");
 
-    // Select summary elements
+    // Get summary elements
     let summaryMatch = document.getElementById("summaryMatch");
     let summaryVenue = document.getElementById("summaryVenue");
     let summaryCategory = document.getElementById("summaryCategory");
@@ -43,8 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let summaryQuantity = document.getElementById("summaryQuantity");
     let total = document.getElementById("total");
 
-
-    // Match details and ticket prices
+    // Match details
     let matches = {
         "1": { name: "CSK vs RCB", venue: "Chennai" },
         "2": { name: "MI vs KKR", venue: "Mumbai" },
@@ -52,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
         "4": { name: "CSK vs KKR", venue: "Chennai" }
     };
 
+    // Ticket prices
     let prices = {
         "General": 800,
         "Premium": 2000,
         "VIP": 5000
     };
 
-
-    // Function to update booking summary
+    // Update booking summary
     function updateSummary() {
 
         let selectedMatch = matchSelect.value;
@@ -72,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let matchDetails = matches[selectedMatch];
         let price = prices[selectedCategory];
-
         let totalAmount = price * quantity;
 
         summaryMatch.innerText = matchDetails.name;
@@ -85,10 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
         showToast("Booking summary updated!");
     }
 
-
-    // Add change event listeners
+    // Listen for changes
     matchSelect.addEventListener("change", updateSummary);
     categorySelect.addEventListener("change", updateSummary);
-    quantityInput.addEventListener("change", updateSummary);
+    quantityInput.addEventListener("input", updateSummary);
 
 });
